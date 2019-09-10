@@ -22,7 +22,7 @@ class Loader{
   //$_directoriesからクラスのパスを生成、読み込み可能であれば読み込む
   public function requireClsFile($class){ 
     foreach ($this->_directories as $dir){
-      $file = $dir . "/" . $class . "php";
+      $file = $dir . "/" . $class . ".php";
       if (is_readable($file)){
         require $file;
         return;

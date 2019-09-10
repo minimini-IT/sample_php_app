@@ -13,7 +13,10 @@ class BlogApp extends AppBase{
     return dirname(__FILE__);
   }
   //ルーティングの定義登録
-  protected function getRouteDefinition(){
+  #protected function getRouteDefinition(){
+  #protected function getRootDefinition(){
+  #public function getRootDefinition(){
+  public function getRouteDefinition(){
     return array(
       "/account" => array("controller" => "account", "action" => "index"),
       "/account/:action" => array("controller" => "account"),
@@ -24,5 +27,6 @@ class BlogApp extends AppBase{
       "/user/:user_name/status/:id" => array("controller" => "blog", "action" => "specific")
     );
   }
+  public function getRootDefinition(){}
 }
 ?>

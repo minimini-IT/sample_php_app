@@ -1,8 +1,11 @@
 <?php
 echo "<p>require Loader.php</p></br>";
-require "/home/acsw/sample_app/mvc/Loader.php";
+$dir = dirname(__FILE__);
+require $dir . "/../mvc/Loader.php";
 $loader = new Loader();
-$loader->regDirectory(dirname(__FILE__) . "/mvc");
-$loader->regDirectory(dirname(__FILE__) . "/models");
+$loader->regDirectory("/var/www/html/sample_php_app/mvc");
+$loader->regDirectory("/var/www/html/sample_php_app/models");
 $loader->register();
+
+class BlogApp extends AppBase{}
 echo "<p>終了</p></br>";

@@ -9,9 +9,12 @@ class Session{
   //------------コンストラクタ----------------
   //セッション確認・開始、セッション情報保持
   public function __construct(){
+    echo "Session";
+    var_dump(!self::$_session_flag);
     if(!self::$_session_flag){
-      session_start();
       self::$_session_flag = true;
+      session_start();
+      #self::$_session_flag = true;
     }
   }
 

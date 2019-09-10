@@ -1,11 +1,11 @@
 <?php
-echo "<p>require BlogApp</p></br>";
-var_dump(file_exists("/home/acsw/sample_app/mvc/Loader.php"));
-require("../BlogApp.php");
-echo "<p>require bootstrap</p></br>";
+$f = "index_error";
 require("../bootstrap.php");
+require("../BlogApp.php");
 //true->エラー表示モード
+echo $f;
 echo "<p>BlogAppインスタンス生成前</p></br>";
 $app = new BlogApp(true);
+echo $f;
 echo "<p>BlogAppインスタンス生成後</p>";
 $app->run();
